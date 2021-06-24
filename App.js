@@ -4,23 +4,13 @@ import {
     View,
     StyleSheet
 } from 'react-native';
-import Home from './screens/home';
-import About from './screens/about';
-import Review from './screens/reviews';
+import DrawerNavigator from './navigation/drawerNavigator';
+import { globalStyles } from './styles/global';
 
 export default function App() {
     return (
-        <View style={styles.main}>
-            <Home />
-            <About />
-            <Review />
+        <View style={globalStyles.main}>
+            <DrawerNavigator />
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    main: {
-        flex: 1,
-        backgroundColor: 'white'
-    }
-});
