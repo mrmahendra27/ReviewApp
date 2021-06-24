@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Header({ navigation, title }) {
@@ -10,7 +10,8 @@ export default function Header({ navigation, title }) {
     return (
         <View style={styles.header}>
             <Icon name="menu" size={30} style={styles.icon} onPress={openMenu}/>
-            <View>
+            <View style={styles.headerTitle}>
+                <Image style={styles.headerImage} source={require('../../assets/heart_logo.png')} />
                 <Text style={styles.headerText}>{title}</Text>
             </View>
         </View>
@@ -25,6 +26,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    icon: {
+        left: 10,
+        position: 'absolute',
+    },
+    headerTitle: {
+        flexDirection: 'row',
+    },
     headerText: {
         fontFamily: 'Roboto-Light',
         fontWeight: 'bold',
@@ -32,8 +40,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
         letterSpacing: 1,
     },
-    icon: {
-        left: 10,
-        position: 'absolute',
+    headerImage: {
+        height: 30,
+        width: 30,
+        marginHorizontal: 10
     }
 });

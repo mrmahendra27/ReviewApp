@@ -11,6 +11,7 @@ function Navigator() {
         <Stack.Navigator initialRouteName="Home" screenOptions={{
             headerStyle: {
                 backgroundColor: 'lightgrey',
+                height: 60,
             },
             headerTitleStyle: {
                 fontFamily: 'Roboto-Light',
