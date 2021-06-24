@@ -20,7 +20,7 @@ function Navigator() {
         }}>
             <Stack.Screen name="Home" component={Home} options={({ navigation }) => {
                 return {
-                    headerTitle: () => <Header navigation={navigation} />
+                    headerTitle: () => <Header navigation={navigation} title='ReviewApp' />
                 }
             }} />
             <Stack.Screen name="Review" component={Review} />

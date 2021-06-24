@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function Header({ navigation }) {
+export default function Header({ navigation, title }) {
     const openMenu = () => {
         navigation.openDrawer();
     }
@@ -11,7 +11,7 @@ export default function Header({ navigation }) {
         <View style={styles.header}>
             <Icon name="menu" size={30} style={styles.icon} onPress={openMenu}/>
             <View>
-                <Text style={styles.headerText}>ReviewApp</Text>
+                <Text style={styles.headerText}>{title}</Text>
             </View>
         </View>
     );
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     headerText: {
         fontFamily: 'Roboto-Light',
         fontWeight: 'bold',
+        color: 'brown',
         fontSize: 20,
         letterSpacing: 1,
     },
