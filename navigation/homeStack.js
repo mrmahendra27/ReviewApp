@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/home";
 import Review from "../screens/reviews";
+import Header from '../components/shared/header';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,11 @@ function Navigator() {
                 fontFamily: 'bold'
             },
         }}>
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Home" component={Home} options={({ navigation }) => {
+                return {
+                    headerTitle: () => <Header navigation={navigation} />
+                }
+            }} />
             <Stack.Screen name="Review" component={Review} />
         </Stack.Navigator>
     )
