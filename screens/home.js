@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, FlatList, Button, TouchableOpacity, Modal } from 'react-native';
+import { View, StyleSheet, Text, FlatList, Button, Keyboard, TouchableOpacity, TouchableWithoutFeedback, Modal } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { globalStyles } from '../styles/global';
 import Card from '../components/shared/card';
+import ReviewForm from './forms/review';
 
 export default function Home({ navigation }) {
     const [viewModal, setViewModal] = useState(false);
@@ -13,21 +14,31 @@ export default function Home({ navigation }) {
         { title: 'Cartoon recommendation', rating: 4, review: 'This is good cartoon recommendation', key: '4' },
     ]);
 
+    const addReview = (review) => {
+        review.key = Math.random().toString();
+        setReviews((prevReviews) => {
+            return [review, ...prevReviews];
+        });
+        setViewModal(false);
+    };
 
     return (
         <View style={globalStyles.container}>
             {/* Modal */}
             <Modal visible={viewModal} animationType='slide'>
-                <View style={styles.modalContent}>
-                    {/* Close Modal */}
-                    <Icon
-                        name="close"
-                        size={30}
-                        style={{ ...styles.modalToggle, ...styles.modalClose }}
-                        onPress={() => setViewModal(false)}
-                    />
-                    {/* Form */}
-                </View>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <View style={styles.modalContent}>
+                        {/* Close Modal */}
+                        <Icon
+                            name="close"
+                            size={30}
+                            style={{ ...styles.modalToggle, ...styles.modalClose }}
+                            onPress={() => setViewModal(false)}
+                        />
+                        {/* Form */}
+                        <ReviewForm addReview={addReview} />
+                    </View>
+                </TouchableWithoutFeedback>
             </Modal>
 
             {/* Open Modal */}
@@ -57,17 +68,18 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
     modalToggle: {
         marginBottom: 10,
-        borderWidth: 1,
-        borderColor: '#f2f2f2',
+        borderWidth: 0.5,
+        borderColor: 'black',
         padding: 9,
         borderRadius: 10,
         alignSelf: 'center'
     },
     modalClose: {
         marginTop: 20,
-        marginBottom: 0,
+        marginBottom: 10,
     },
     modalContent: {
-        flex: 1
+        flex: 1,
+        margin: 10,
     }
 })

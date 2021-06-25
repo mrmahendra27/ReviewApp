@@ -28,6 +28,15 @@ export const globalStyles = StyleSheet.create({
         paddingTop: 18,
         borderTopWidth: 2,
         borderTopColor: '#eee'
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: 'grey',
+        fontSize: 15,
+        padding: 10,
+        color: 'black',
+        marginVertical: 10,
+        borderRadius: 15
     }
 });
 
