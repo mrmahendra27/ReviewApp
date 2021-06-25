@@ -10,6 +10,7 @@ export default function Review({ navigation, route }) {
             <Card>
                 <Text style={globalStyles.titleText}>{item.title}</Text>
                 <Text style={globalStyles.review}>{item.review}</Text>
+                <Text style={globalStyles.author}>~{item.author}</Text>
                 <View style={globalStyles.rating}>
                     <Text>Rating: </Text>
                     <Image source={images.ratings[item.rating]} />

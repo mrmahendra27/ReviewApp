@@ -29,14 +29,25 @@ export const globalStyles = StyleSheet.create({
         borderTopWidth: 2,
         borderTopColor: '#eee'
     },
+    author: {
+        textAlign: 'right',
+        fontFamily: 'Roboto-Regular',
+        fontSize: 13,
+    },
     input: {
         borderWidth: 1,
         borderColor: 'grey',
         fontSize: 15,
         padding: 10,
         color: 'black',
-        marginVertical: 10,
         borderRadius: 15
+    },
+    errorText: {
+        color: 'crimson',
+        textAlign: 'center',
+        marginTop: 5,
+        marginBottom: 10,
+        fontWeight: 'bold'
     }
 });
 

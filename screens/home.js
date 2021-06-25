@@ -8,10 +8,10 @@ import ReviewForm from './forms/review';
 export default function Home({ navigation }) {
     const [viewModal, setViewModal] = useState(false);
     const [reviews, setReviews] = useState([
-        { title: 'Anime recommendation', rating: 5, review: 'This is good whsjs swsnjws wsxjwsxnsw sxsjwsx wsxwjxsw wsxsjwsx ss xsxswsx sws xsjxs x s anime recommendation, This is good whsjs swsnjws wsxjwsxnsw sxsjwsx wsxwjxsw wsxsjwsx ss xsxswsx sws xsjxs x s anime recommendation. This is good whsjs swsnjws wsxjwsxnsw sxsjwsx wsxwjxsw wsxsjwsx ss xsxswsx sws xsjxs x s anime recommendation', key: '1' },
-        { title: 'Movie recommendation', rating: 4, review: 'This is good movie recommendation', key: '2' },
-        { title: 'Series recommendation', rating: 2, review: 'This is good series recommendation', key: '3' },
-        { title: 'Cartoon recommendation', rating: 4, review: 'This is good cartoon recommendation', key: '4' },
+        { title: 'Anime recommendation', rating: 5, review: 'This is good whsjs swsnjws wsxjwsxnsw sxsjwsx wsxwjxsw wsxsjwsx ss xsxswsx sws xsjxs x s anime recommendation, This is good whsjs swsnjws wsxjwsxnsw sxsjwsx wsxwjxsw wsxsjwsx ss xsxswsx sws xsjxs x s anime recommendation. This is good whsjs swsnjws wsxjwsxnsw sxsjwsx wsxwjxsw wsxsjwsx ss xsxswsx sws xsjxs x s anime recommendation', author: 'anonymous', key: '1' },
+        { title: 'Movie recommendation', rating: 4, review: 'This is good movie recommendation', author: 'anonymous', key: '2' },
+        { title: 'Series recommendation', rating: 2, review: 'This is good series recommendation', author: 'anonymous', key: '3' },
+        { title: 'Cartoon recommendation', rating: 4, review: 'This is good cartoon recommendation', author: 'anonymous', key: '4' },
     ]);
 
     const addReview = (review) => {
